@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<runtimes>\r\n  <runtime id\="Progress Application Server for OpenEdge 12.2" location\="C\:/Progress/OpenEdge" name\="Progress Application Server for OpenEdge 12.2" runtime-type-id\="com.progress.openedge.pdt.pasoe.server.runtime" timestamp\="0"/>\r\n</runtimes>\r\n

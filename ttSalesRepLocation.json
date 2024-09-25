@@ -1,0 +1,26 @@
+{"ttSalesRepLocation": [
+  {
+    "sales_rep_id": "NTest1",
+    "sales-rep-name": "Test1",
+    "check_in_time": 1529485386078,
+    "check_out_time": 0,
+    "longitude": "66.5901° W",
+    "Latitude": "18.2208° N"
+  },
+  {
+    "sales_rep_id": "NTest2",
+    "sales-rep-name": "Test 2",
+    "check_in_time": 1529485481375,
+    "check_out_time": 0,
+    "longitude": "-162.000983",
+    "Latitude": "20.4022368"
+  },
+  {
+    "sales_rep_id": "NTest3",
+    "sales-rep-name": "Test",
+    "check_in_time": 1529485576980,
+    "check_out_time": 0,
+    "longitude": "124.3875392",
+    "Latitude": "-0.5418918"
+  }
+]}

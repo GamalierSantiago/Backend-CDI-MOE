@@ -1,0 +1,243 @@
+0,LblA_Z,A-Z
+0,LblAccount,Account
+0,LblAllType,All Types
+0,LblAmountInvoiced,Amount Invoiced
+0,LblAmountOverdue,Amount Overdue
+0,LblAvailableCredit,Available Credit
+0,LblBillingInformation,Billing Information
+0,LblLeftInStock,Left in stock 
+0,LblClose,Close
+0,LblMake,Make
+0,LblVendor,Vendor
+0,LblFamily,Family
+0,LblFabric,Fabric
+0,LblCreditLimit,Credit Limit
+0,LblCustomerNumber,Customer Number
+0,LblCustomers,Customers
+0,LblCustOverdue,Customers Overdue
+0,LblForgotPwd,Forgot Password
+0,LblInternetConnectivity,No Internet Connection. You still can order while offline. Last updated @
+0,LblInvoice,Invoice
+0,LblLogIn,Log In
+0,LblNearMe,Near Me
+0,LblOpen,Open
+0,LblOpenCarts,Open Carts
+0,LblOpenOrder,Open Order
+0,LblOrders,Orders
+0,LblOrder,Order
+0,LblPassword,Password
+0,LblPaymentInformation,Payment  Information
+0,LblQuantityCantBeBlank,Quantity cannot be blank or zero
+0,LblPhone,Phone
+0,LblAddress,Address
+0,LblEmail,Email
+0,LblPaymentMethod,Payment Method
+0,LblPaymentTerm,Payment Term
+0,LblPriceBook,Price Book
+0,LblPriceList,Price List
+0,LblProductSearch,Product
+0,LblRecentVisit,Recent Visit
+0,LblSalesin90Days,Sales in last 90 days
+0,lblSearchNameAdd,"Name, Address, Phone or Email"
+0,LblShippingInformation,Shipping Information
+0,LblShop,Shop
+0,LblTotalSales,Total Sales
+0,LblType,Type
+0,LblUsername,Username
+0,LblViewInvoice,View Invoice
+0,LblViewOrder,View Order 
+0,LblXDaysSinceLastVisit,days since last visit
+0,LblAllDepartments,All Departments
+0,LblFilter,Filter
+0,Lblitems,Items
+0,LblThisWeeksTopSeller,This week's top seller
+0,LblInspiredByPurchasingHistory,Inspired by your purchasing history
+0,LblOnlyLeft,Only XX left
+0,LblInCart,In cart
+0,LblInStock,In Stock
+0,LblClearAll,Clear All
+0,LblFilterBy,Filter By
+0,LblTopSeller,Top Seller
+0,LblProductDetails,Product Details
+0,LblUnitPrice,Unit Price
+0,LblQuantityInCart,Quantity In cart
+0,LblColor,Color
+0,LblSize,Size
+0,LblShoppingCart,Shopping Cart
+0,LblRemove,Remove
+0,LblQuantity,Quantity 
+0,LblInspiredByShoppingCart,Inspired by your shopping cart
+0,LblCartSubtotal,Cart Subtotal
+0,LblCheckout,Checkout
+0,LblCheckQuantity,Check quantity
+0,LblOr,or
+0,LblEmptyCart,Empty Cart
+0,LblOrderSummary,Order Summary
+0,LblSubTotal,Sub Total
+0,LblShipping_Handling,Shipping & Handling
+0,LblCityTax,City Tax
+0,LblStateTax,State Tax
+0,LblOrderTotal,Order Total
+0,LblSubmitOrder,Submit Order
+0,LblIAgreeToTerm&Condition,I agree to the Terms & Conditions
+0,LblClear,Clear
+0,LblAddPaymentMethod,Add Payment Method
+0,LblCash,Cash
+0,LblCheck,Check
+0,LblAmount,Amount
+0,LblPrimary,Primary
+0,LblReviewOrder,Review Order
+0,LblCompleteOrder,Complete Order
+0,LblRepeatThisOrder,Repeat This Order
+0,LblAllStatuses,All Statuses
+0,LblLast6Months,Last 6 months
+0,LblPlacedOn,Placed on
+0,LblOrderedOn,Ordered on
+0,LblShipped,Shipped
+0,LblPendingOrder,Pending Order
+0,LblPartiallyShipped,Partially Shipped
+0,LblClosedOrder,Closed Order
+0,LblCanceled,Canceled
+0,LblShippedOn,Shipped on
+0,LblInvoiceOrOrderNumberSearch,Invoice Number or Order Number
+0,LblAllStatus,All Status
+0,LblCollectPayment,Collect Payment
+0,LblDueOn,Due on
+0,LblTotal,Total
+0,LblCollected,Collected
+0,LblOutstanding,Amount Receivable
+0,LblStatus,Status
+0,LblDraft,Draft
+0,LblOverdue,Overdue
+0,LblInvoiced,Invoiced
+0,LblPendingPayment,Pending Payment
+0,LblPaid,Paid
+0,LblPartial,Partial
+0,LblTotalCollected,Total Collected
+0,LblPaymentDate,Payment Date
+0,LblINV,INV
+0,LblTotalCollectedAmount,Total Collected Amount
+0,LblCollect,Collect
+0,LblReturnedCheck,Returned check
+0,LblDeclinedPayment,Declined payment
+0,LblItem,Item
+0,LblProductInformation,Product Information
+0,LblFeatures,Features
+0,LblDeclinedPaymentMessage,"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. "
+0,LblEmptyCartMessage,Are you sure you want to delete all items in cart
+0,LblRemoveItemMessage,Are you sure you want to delete this product
+0,LblLogoutMessage,Are you sure you want to logout?
+0,LblLogout,Logout
+0,LblYes,Yes
+0,LblNo,No
+0,Lblalert,Alert
+0,Lblok,OK
+0,LblAddYourSignature,Add Your Signature
+0,Lblcancel,Cancel
+0,LblenterQuantityHere,Enter Quantity Here
+0,LblAddToCart,Add To Cart
+0,LblSelectColor,Select Color
+0,LblselectSize,Select Size
+0,LblChequeNumber,Cheque Number
+0,LblPDFNotAvailable,PDF is not available for this item
+0,LblBankName,Bank Name
+0,LblInvoiceDetails,Invoice Details
+0,LblTotalOutstanding,Total Outstanding
+0,LblEnteredAmtCantBeLesser,Entered amount cannot be lesser or more than
+0,LblValidName,Please enter valid name
+0,LblPORequired,PO Required
+0,LblItemDoesNotExist,This item does not exists
+0,LblEnteredAmtCantBeMoreThan,Entered amount cannot be more than
+0,LblLast,Last
+0,LblMonth,Months
+0,LblAddSignature,Please add signature
+0,LblSelectOnePaymentMethod,Please select atleast one invoice to proceed
+0,LblCongratulations,Congratulations!
+0,LblOrderNumber,Order Number 
+0,LblName,Name
+0,LblNoInvoices,There are no invoices
+0,LblOnline,Online
+0,LblPONumber,PO Number 
+0,LblPaymentMadeSuccesfully,Payment Made Succesfully
+0,200_pay_amt_lessEqual_zero,Payment amount cannot be less than or Equal to zero
+0,200_not_enough_qty_cart1,Not enough on hand for this order 
+0,200_not_enough_qty_cart2,Quantity on hand is 
+0,200_not_enough_qty_cart3,Alternate number Do you want to over-ship?
+0,200_select_atleast_one_invoice,Please select atleast one invoice to proceed
+0,200_no_top_selling_prod,No top selling products found
+0,200_no_data_found,No results found
+0,200_user_blank,Please provide the username.
+0,200_pswd_blank,Please provide the password.
+0,200_user_pswd_blank,Username and password cannot be blank.
+0,403_invalid_token,Unauthorized Access.  Session is invalid.
+0,200_session_expired,Session has been expired. Please login again.
+0,200_invalid_lang,Language not supported.
+0,200_invalid_cmpny,Company not found.
+0,200_invalid_customer,Customer not found.
+0,200_sortby_blank,Please provide sorting criteria.
+0,200_invalid_order,Order not found.
+0,200_longLat_blank,Please provide Longitude and Latitude.
+0,200_cust_blank,Please provide any customer number .
+0,200_qty_update_error,Unable to update quantity
+0,200_qty_updated_successfuly,Quantity updated succesfully
+0,200_order_blank,Please provide  an order number.
+0,200_deviceid_blank,Please provide device id of the user.
+0,200_token_renew,Session has been expired. New session has been created.
+0,200_order_placed_offline,Your order has been placed succesfully. It will sync once you come online
+0,200_order_placed_online,Thank you for your order! 
+0,200_order_number,Order number is:
+0,200_invalid_usertype,Invalid user type.
+0,200_mob_multilogin,Multiple login not allowed. Please log out from the previous device first.
+0,403_mismatch_usertype_token,Unauthorized Access.  Session is invalid.
+0,403_mismatch_deviceid_token,Unauthorized Access.  Session is invalid.
+0,403_mismatch_user_token,Unauthorized Access.  Session is invalid.
+0,403_mismatch_lang_token,Token language doesn't match with provided language id
+0,200_lang_blank,Please provide any language ID.
+0,200_cmpny_blank,Please provide any company ID.
+0,200_invalid_user,Invalid Username
+0,200_invalid_paswd,Invalid Password
+0,200_invalid_user_paswd,Invalid username or password.
+0,200_usertype_blank,Please provide usertype
+0,500_unknown_error,Something went wrong. Please try again.
+0,200_invalid_datetime,"Please provide valid date,time and timezone."
+0,200_invalid_sortby,Invalid sorting criteria.
+0,200_checkinTimestamp_blank,Please provide checkin timestamp.
+0,200_cat_blank,Please provide any category.
+0,200_invalid_category,Category not found.
+0,200_invalid_timestamp,Timestamp is invalid.
+0,200_no_product_found,No product found.
+0,200_invalid_quantity,Invalid Quantity
+0,200_product_added_successfully,Product Added Successfully
+0,200_enter_quantity_first,Please Enter Quantity First
+0,200_error_in_adding_product,Error in adding products
+0,200_no_size_available,No Size Available
+0,200_no_shipping_address,No Shipping Address Available
+0,200_enter_valid_quantity,Please Enter Valid Quantity
+0,200_credit_limit_exceeded,Your credit limit has been exceeded
+0,200_empty_cart,Cart is empty 
+0,200_cart_already_sync,Cart has been already synced
+0,200_blank_cart_operation,Please specify a cart operation
+0,200_invalid_cart_operation,Cart operation is invalid 
+0,200_memo_not_found,Memo not found in Open Accounts Receivable File
+0,200_invoice_not_Found,Invoice not found in Open Accounts Receivable File
+0,200_verify_entry ,"Please, check the cancel-layaway entry"
+0,200_order_not_available,"Order not available, can't update this layaway"
+0,200_invalid_payment_method,Please select a valid payment method
+0,200_on_acc_pay_ntfound,On Account Payment Not Found
+0,200_cheque_num_cannot_blank,Cheque number cannot be blank
+0,200_less_pay_amount,Please pay the total amount
+0,200_invoice_amount_exceed,Invoice amount is exceeding your available credit limit
+0,200_order_num_cannot_blank,Please provide the order number
+0,200_invalid_order_num,Invalid Order
+0,200_cashback_cntbe_greater_invoice,Cashback cannot be greater than invoice balance
+0,200_cashback_cntbe_greater_amtpaid,Cashback cannot be greater than amount paid
+0,200_an_error_occured,An error has occurred. Please try again!
+0,200_online_amount_exceed,Online amount is exceeding your net payment amount
+0,200_invalid_rowid,Invalid Row ID
+0,200_no_more_records,No more products found
+0,200_no_order_history,No order history data available
+0,200_po_number_blank,Please provide customer order number
+0,200_signee_name_blank,Name cannot be blank
+0,200_item_fr_invoice,Item for invoice
+0,200_order_date_time_blank,Please provide date and time for order placement
+0,200_not_found,Not found

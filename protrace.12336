@@ -1,0 +1,62 @@
+=====================================================
+PROGRESS stack trace as of Wed May 15 16:26:21 2024
+=====================================================
+
+Progress OpenEdge Release 12.2 build 1183 SP01 on WINNT 
+
+Startup parameters:
+-pf C:\Progress\OpenEdge\startup.pf,-cpinternal ISO8859-1,-cpstream ISO8859-1,-cpcoll Basic,-cpcase Basic,-d mdy,-numsep 44,-numdec 46,(end .pf),-wy,-nosplash,-debugalert,-inp 16000,-tok 4000,-rereadnolock,-s 200,-mmax 65534,-T C:/OpenEdge/WRK,-p C:\Progress\OpenEdge\oeide\eclipse\plugins\com.openedge.pdt.project_12.2.1.00\runtime\_server.p
+
+Exception code: C0000005 ACCESS_VIOLATION
+Fault address:  00007FFCFF1B7EDD 01:0000000000506EDD C:\Progress\OpenEdge\bin\prow.dll
+
+Registers:
+RAX:000002B447E4F748
+RBX:000000000000000A
+RCX:000002B42EBA3D48
+RDX:000000000000000A
+RSI:000002B42EB83DA8
+RDI:000000D7E7BFFB20
+R8 :0000000000000000
+R9 :000000D7E7BFFB20
+R10:000002B42EB83DA8
+R11:00007FFD33281B5F
+R12:0000000000000000
+R13:000000000000000A
+R14:000002B42EB31C48
+R15:000002B42EBA3D48
+CS:RIP:0033:00007FFCFF1B7EDD
+SS:RSP:002B:000000D7E7BFF920  RBP:000000D7E7BFF9D9
+DS:002B  ES:002B  FS:0053  GS:002B
+Flags:00010246
+
+
+Debugging dll: C:\Progress\OpenEdge\bin\DBGHELP.DLL
+Symbol Path:
+ C:\Progress\OpenEdge\bin;C:\Progress\OpenEdge\pdbfiles
+
+
+Call Stack:
+Address           Frame
+00007FFCFF1B7EDD  000000D7E7BFFA20  dsmDbUserNotificationsGet+4D
+00007FFCFF0250B3  000000D7E7BFFA60  prochkneedsattn+53
+00007FFCFED4E137  000000D7E7BFFAD0  fdchkneedsattn+97
+00007FFCFF10B743  000000D7E7BFFCE0  sccheckneedsattn+173
+00007FFCFF0769AD  000000D7E7BFFD10  rnLaunchNeedsAttnThread+32D
+00007FFD3A77268A  000000D7E7BFFD40  o_exp+5A
+00007FFD3B9D7AC4  000000D7E7BFFD70  BaseThreadInitThunk+14
+00007FFD3E47A4E1  000000D7E7BFFDF0  RtlUserThreadStart+21
+
+
+** ABL Stack Trace **
+
+
+** Persistent procedures/Classes **
+
+** PROPATH **
+P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing\PASOEContent\WEB-INF\openedge,P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing\AppServer,P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing,C:\Progress\OpenEdge\gui\,C:\Progress\OpenEdge\gui\adecomm.pl,C:\Progress\OpenEdge\gui\adecomp.pl,C:\Progress\OpenEdge\gui\adedict.pl,C:\Progress\OpenEdge\gui\adeedit.pl,C:\Progress\OpenEdge\gui\adeicon.pl,C:\Progress\OpenEdge\gui\adeshar.pl,C:\Progress\OpenEdge\gui\adeuib.pl,C:\Progress\OpenEdge\gui\adeweb.pl,C:\Progress\OpenEdge\gui\adexml.pl,C:\Progress\OpenEdge\gui\dataadmin.pl,C:\Progress\OpenEdge\gui\prodict.pl,C:\Progress\OpenEdge\gui\protools.pl,C:\Progress\OpenEdge\gui\OpenEdge.Core.pl,C:\Progress\OpenEdge\gui\OpenEdge.BusinessLogic.pl,C:\Progress\OpenEdge\gui\netlib\OpenEdge.Net.pl,C:\Progress\OpenEdge,C:\Progress\OpenEdge\bin,C:\Progress\OpenEdge\tty,P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing\PASOEContent\WEB-INF,P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing\PASOEContent\WEB-INF\openedge\include,P:\Mobile-And-Web-Application\Backend\Test-Backend\Gamalirt\workspace\OrderProcessing\PASOEContent,P:\cdi-apis\Triggers,C:\Progress\OpenEdge\gui,C:\Progress\OpenEdge\gui\ablunit.pl,C:\Progress\OpenEdge\gui\adedesk.pl,C:\Progress\OpenEdge\gui\aderes.pl,C:\Progress\OpenEdge\gui\OpenEdge.ServerAdmin.pl
+
+** Databases (logical/type/physical) **
+   CDI                 PROGRESS  P:/ProgressDB/CDI-Aceros/CDI
+
+** End of Protrace **

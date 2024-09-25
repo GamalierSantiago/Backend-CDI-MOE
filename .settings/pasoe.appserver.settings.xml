@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module-content version="11.7">
+<module id="b064e5fc-f892-44ad-95ec-10da87579ef3" name="OrderProcessing">
+<resource path="AppServer" publish="true"/>
+</module>
+</module-content>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prgs:model xmlns:prgs="http://www.progress.com/caf/camel/component/prgrs" id="resourceModel">
+  <prgs:resource consumes="application/json" name="_salespersonlogin" path="/salespersonlogin" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..salespersonLogin" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_customerlogin" path="/customerlogin" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..customerLogin" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_systemsetup" path="/systemsetup" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..systemSetup" produces="application/json" verb="GET">
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_logout" path="/logout" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..logout" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_getcustomers" path="/getcustomers" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..fetchCustomers" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_checkin" path="/checkin" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..setSlsmanLocation" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="token" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_categories" path="/categories" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getCategoriesFilters" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_customersync" path="/customersync" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..customerSync" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_items" path="/items" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getCategoryItems" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_productsearch" path="/productsearch" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..freeFormProductSearchWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_recommendedproducts" path="/recommendedproducts" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..recommendedItems" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="token" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_getcartproducts" path="/getcartproducts" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..fetchCartProducts" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_cart" path="/cart" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..cartOperations" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="token" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_checkout" path="/checkout" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..checkOutWrapper" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="token" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_orderhistory" path="/orderhistory" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..orderHistoryWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_ordereditems" path="/ordereditems" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..orderedItemsWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_collectpayment" path="/collectpayment" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..collectPaymentWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_invoicehistory" path="/invoicehistory" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..invoiceHistoryWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_itemspagination" path="/itemspagination" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getCategoryItemsPagination" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_supervisorLogin" path="/supervisorLogin" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..supervisorLogin" produces="application/json" verb="POST">
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_getopenorderitems" path="/getopenorderitems" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..openOrderItemsWrapper" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_overdueinvoiceitems" path="/overdueinvoiceitems" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getCustOverdueInvoiceItemsWpr" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_onlineaccount" path="/getonlinepaymentaccount" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getOnlinePaymentAccont" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_setcustlocation" path="/setcustlocation" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..setCustomerLocation" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_getsethdinfo" path="/getsethdinfo" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getsethd" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+  <prgs:resource consumes="application/json" name="_getsalesrepreport" path="/getsalesrepreport" produces="application/json">
+    <prgs:operation consumes="application/json" idls="OrderProcessing/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..getsalesrepreport" produces="application/json" verb="POST">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
+</prgs:model>

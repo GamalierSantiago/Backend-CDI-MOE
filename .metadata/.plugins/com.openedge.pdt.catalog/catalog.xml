@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2" class="java.beans.XMLDecoder"> 
+ <object class="com.openedge.catalog.CatalogInfo"> 
+  <void property="contentBuilders"> 
+   <void method="put"> 
+    <string>4GLANNOTATION</string> 
+    <object class="java.util.Properties"> 
+     <void method="put"> 
+      <string>exts</string> 
+      <string>cls,i,p,w</string> 
+     </void> 
+     <void method="put"> 
+      <string>code</string> 
+      <string>4GLANNOTATION</string> 
+     </void> 
+     <void method="put"> 
+      <string>class</string> 
+      <string>com.openedge.catalog.contentbuilder.AnnotationContentBuilder</string> 
+     </void> 
+     <void method="put"> 
+      <string>desc</string> 
+      <string>4GL Annotation</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>4GLAPPSCHEMA</string> 
+    <object class="java.util.Properties"> 
+     <void method="put"> 
+      <string>exts</string> 
+      <string>cls,i,p,w</string> 
+     </void> 
+     <void method="put"> 
+      <string>code</string> 
+      <string>4GLAPPSCHEMA</string> 
+     </void> 
+     <void method="put"> 
+      <string>class</string> 
+      <string>com.openedge.catalog.contentbuilder.ApplicationSchemaContentBuilder</string> 
+     </void> 
+     <void method="put"> 
+      <string>desc</string> 
+      <string>4GL Application Schema</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>4GLREFERENCE</string> 
+    <object class="java.util.Properties"> 
+     <void method="put"> 
+      <string>exts</string> 
+      <string>cls,i,p,w</string> 
+     </void> 
+     <void method="put"> 
+      <string>code</string> 
+      <string>4GLREFERENCE</string> 
+     </void> 
+     <void method="put"> 
+      <string>class</string> 
+      <string>com.openedge.catalog.contentbuilder.ReferenceContentBuilder</string> 
+     </void> 
+     <void method="put"> 
+      <string>desc</string> 
+      <string>4GL Reference</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

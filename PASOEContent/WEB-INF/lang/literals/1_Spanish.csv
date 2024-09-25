@@ -1,0 +1,346 @@
+1,LblA_Z,A-Z
+1,LblAccount,Cuenta
+1,LblAllType,Todos los Tipos
+1,LblAmountInvoiced,Cantidad Facturada
+1,LblAmountOverdue,Cantidad Vencida
+1,LblAvailableCredit,Crédito Disponible
+1,LblBillingInformation,Información de Facturación
+1,LblLeftInStock,Disponible en Inventario
+1,LblClose,Cerrar
+1,LblCreditAccount,Cuenta de Crédito
+1,LblInvoiceAge,Edad de la Factura
+1,LblEnterNameHere,Introduzca nombre aquí
+1,LblCustomerType,Tipo de Cliente
+1,LblChangeSignature,Cambiar Firma
+1,LblDescription,Descripción
+1,LblLastSeenAt,Última vez visto en
+1,LblCreditLimit,Límite de Crédito
+1,LblViewAllCustomers,Ver Todos Los Clientes
+1,LblCustomerNumber,Número de Cliente
+1,LblItemAddedSuccesfuly,Artículo agregado exitosamente
+1,LblSalesInLast,Ventas en últimos
+1,LblDays,días
+1,LblRead,Leer
+1,LblOnOrder,En orden
+1,LblCommitQty,Cantidad Cometida
+1,LblNoItem,No hay artículos seleccionados para realizar un pedido.
+1,LblTermsAndCond,Términos y Condiciones
+1,LblInvoiceDate,Fecha de la Factura
+1,LblItemUOM,Artículo UOM
+1,LblOpenPDF,Abrir PDF
+1,LblUOMQty,Cantidad de UOM
+1,LblCustomers,Clientes
+1,LblCustOverdue,Clientes Atrasados
+1,LblPleaseWait,"Por favor, espere." 
+1,LblTermsAndCondition,Estoy de acuerdo con los terminos y condiciones
+1,LblForgotPwd,¿Olvidó su contraseña?
+1,LblInternetConnectivity,Sin conexión a Internet. Todavía puede ordenar mientras está desconectado. Última actualización @
+1,LblMake,Marca
+1,LblVendor,Vendedor
+1,LblFamily,Familia
+1,LblFabric,Tela
+1,LblInvoice,Factura
+1,LblLogIn,Iniciar Sesión
+1,LblNearMe,Cerca de mí
+1,LblPhone,Teléfono
+1,LblLive,Actual
+1,LblReport,Reporte
+1,LblReportType,Tipo de Reporte
+1,LblAddress,Dirección
+1,LblEmail,Email
+1,LblOpen,Abierto
+1,LblOpenCarts,Carritos de Compra Abiertos
+1,LblOpenOrder,Orden Abierta
+1,LblOrders,Ordenes
+1,LblOrder,Orden 
+1,LblPassword,Contraseña
+1,LblPaymentInformation,Información del Pago
+1,LblPaymentMethod,Método de Pago
+1,LblPaymentTerm,Plazo de Pago
+1,LblPriceBook,Libro de Precios
+1,LblPriceList,Lista de Precios
+1,LblProductSearch,Producto
+1,LblClickHere,Haga clic aquí
+1,LblRecentVisit,Visitado Reciente
+1,LblSalesin90Days,Ventas en los últimos 90 días
+1,lblSearchNameAdd,"Nombre, ID del Cliente, Teléfono o Email"
+1,LblShippingInformation,Información de envío
+1,LblShop,Tienda
+1,LblTotalSales,Ventas Totales
+1,LblCheckQuantity,Consultar Cantidad
+1,LblType,Tipo
+1,LblUsername,Nombre de Usuario
+1,LblViewInvoice,Ver Factura
+1,LblViewOrder,Ver Orden
+1,LblXDaysSinceLastVisit,Días desde la última visita
+1,LblSynced,Sincronizado
+1,LblNotSynced,No Sincronizado
+1,LblAllDepartments,Todos los Departamentos
+1,LblFilter,Filtrar
+1,Lblitems,Artículos
+1,LblThisWeeksTopSeller,Lo Más Vendido esta Semana
+1,LblInspiredByPurchasingHistory,Inspirado en su historial de compras
+1,LblQuantityCantBeBlank,La cantidad no puede estar en blanco o cero
+1,LblOnlyLeft,Sólo quedan XX
+1,LblInCart,En Carrito
+1,LblInStock,Disponible
+1,LblClearAll,Limpiar Todo
+1,LblFilterBy,Filtrado por
+1,LblTopSeller,Mejor vendedor
+1,LblProductDetails,Detalles del producto
+1,LblUnitPrice,Precio por Unidad
+1,LblQuantityInCart,Cantidad en el carrito
+1,LblColor,Color
+1,LblSize,Tamaño
+1,LblShoppingCart,Carrito de Compras
+1,LblRemove,Remover
+1,LblQuantity,Cantidad
+1,LblInspiredByShoppingCart,Inspirado en su carrito de compras
+1,LblCartSubtotal,Total Parcial del Carrito
+1,LblCheckout,Proceder
+1,LblOr,O
+1,LblEmptyCart,Vaciar Carrito
+1,LblOrderSummary,Resumen del Pedido
+1,LblSubTotal,Total Parcial
+1,LblShipping_Handling,Manejo y Envío
+1,LblCityTax,Impuesto Municipal
+1,LblStateTax,Impuesto Estatal
+1,LblOrderTotal,Total del Pedido
+1,LblSubmitOrder,Enviar Orden
+1,LblIAgreeToTerm&Condition,Estoy de acuerdo con los términos y condiciones
+1,LblClear,Borrar
+1,LblAddPaymentMethod,Agregar método de pago
+1,LblCash,Efectivo
+1,LblCheck,Cheque
+1,LblAmount,Precio
+1,LblPrimary,Primario
+1,LblReviewOrder,Revisión del Pedido
+1,LblCompleteOrder,Completar Orden
+1,LblRepeatThisOrder,Repetir esta Orden
+1,LblAllStatuses,Todos los Estados
+1,LblLast6Months,Últimos 6 meses
+1,LblPlacedOn,Ordenado en
+1,LblOrderedOn,Ordenado el
+1,LblShipped,Enviado
+1,LblPendingOrder,Orden Pendiente
+1,LblPartiallyShipped,Parcialmente Enviado
+1,LblClosedOrder,Pedido Cerrado
+1,LblCanceled,Cancelado
+1,LblShippedOn,Enviado en
+1,LblInvoiceOrOrderNumberSearch,Número de factura o número de pedido
+1,LblAllStatus,Todos los Estados
+1,LblCollectPayment,Recoger el Pago
+1,LblDueOn,Deuda caduca en
+1,LblTotal,Total
+1,LblCollected,Cobrado
+1,LblOutstanding,Cantidad por Cobrar
+1,LblStatus,Estado
+1,LblDraft,Borrador
+1,LblOverdue,Atrasado
+1,LblInvoiced,Facturado
+1,LblPendingPayment,Pago Pendiente
+1,LblPaid,Pagado
+1,LblPartial,Parcial
+1,LblTotalCollected,Total Recogido
+1,LblTotalOutstanding,Total Pendiente
+1,LblPaymentDate,Fecha de Pago
+1,LblINV,INV
+1,LblTotalCollectedAmount,Cantidad Total Cobrada
+1,LblCollect,Recoger
+1,LblReturnedCheck,Cheque Devuelto
+1,LblDeclinedPayment,Pago Rechazado
+1,LblItem,Artículo
+1,LblProductInformation,Información del Producto
+1,LblFeatures,Caracteristicas
+1,LblEmptyCartMessage,¿Seguro que quieres eliminar todos los artículos en el carrito?
+1,LblRemoveItemMessage,¿Seguro que quieres eliminar este producto?
+1,LblLogoutMessage,¿Seguro que quieres desconectarte?
+1,LblLogout,Cerrar Sesión
+1,LblDeclinedPaymentMessage,El Pago fue Rechazado
+1,LblYes,Sí
+1,LblNo,No
+1,Lblalert,Alerta
+1,Lblok,De Acuerdo
+1,Lblcancel,Cancelar
+1,LblSelectColor,Seleccionar el Color
+1,LblselectSize,Seleccionar el Tamaño
+1,LblChequeNumber,Número de Cheque
+1,LblBankName,Nombre del Banco
+1,LblAddYourSignature,Agregar Firma
+1,LblenterQuantityHere,Ingrese la cantidad aquí
+1,LblAddToCart,Añadir al carrito
+1,LblShippedOnInv,Embarcado
+1,LblPDFNotAvailable,PDF no disponible para este artículo
+1,LblInvoiceDetails,Detalles de la factura
+1,LblEnteredAmtCantBeLesser,La cantidad ingresada no puede ser menor o mayor
+1,LblValidName,"Por favor, ingrese un nombre válido."
+1,LblPORequired,PO Requerido
+1,LblItemDoesNotExist,Este artículo no existe
+1,LblDataNotAvailable,"Los datos no se han sincronizado con el servidor. Por favor, sincronice los datos."
+1,LblEnteredAmtCantBeMoreThan,La cantidad ingresada no puede ser mayor que
+1,LblEnteredAmtCantBeLessThan,La cantidad ingresada no puede ser menor que
+1,LblLast,Último
+1,LblMonth,Mes
+1,LblAddSignature,"Por favor, agregue una firma."
+1,LblSelectOnePaymentMethod,Seleccione una factura para continuar
+1,LblPaymentMadeSuccesfully,Pago realizado con éxito
+1,LblOrderNumber,Número de Orden
+1,LblName,Nombre
+1,LblNoInvoices,No hay facturas
+1,LblOnline,Tarjeta
+1,LblCongratulations,¡Felicitaciones!
+1,LblPONumber,Número Postal
+1,LblChckin,Registrarse
+1,LblChckout,Revisión
+1,LblTotalAmtLess,La cantidad total es menor que 
+1,LblRemainingAmt,Cantidad restante agregada a la factura
+1,LblViewPDF,Ver información del producto en formato PDF
+1,LblSupervisorDetail,Detalles del Supervisor
+1,LblServerDown,Servidor no Accesible
+1,LblSelectAll,Seleccionar todas las facturas no pagadas
+1,LblSelectedInvoice,Facturas Seleccionadas
+1,LblRoute,Seleccione Ruta
+1,LblSelected,Seleccionado
+1,LblNoCustomerFound,No se encontraron clientes para este representante de ventas 
+1,LblAtCompany,En la compañía
+1,LblSyncing,Sincronizando
+1,LblOf,De
+1,LblQuestion,Quieres
+1,LblSync,Sincronizar
+1,LblAllData,Toda la información
+1,LblPleaseSelect,"Por favor, seleccione al menos una acción."
+1,LblSyncedSuccessfully,Se ha sincronizado correctamente
+1,LblCart,Carro
+1,LblAll,Seleccionar Todo
+1,LblCardNumber,Número de Tarjeta
+1,LblExpirydate,Fecha de Caducidad 
+1,LblCardcode,Código de Seguridad
+1,LblApply,Aplicar
+1,LblRemoveData,Eliminar los datos del dispositivo
+1,LblSendOrderEmail,Enviar informacion de pedido y factura por correo electrónico
+1,LblTotalInv,Total de Pago
+1,LblTotalInvoice,Factura Total
+1,LblPackSize,Paquete
+1,LblQtyMore,No puede pedir una cantidad superior a la cantidad disponible
+1,LblSalesRepReport,Reporte de Ventas
+1,200_pay_amt_lessEqual_zero,La cantidad del pago no puede ser menor o igual a cero
+1,200_No_Open_Order_Found,No se encontraron pedidos abiertos
+1,200_no_data_found,No se han encontrado resultados
+1,200_not_enough_qty_cart1,No hay cantidad suficiente disponible para esta orden
+1,200_not_enough_qty_cart2,La cantidad disponible es
+1,200_not_enough_qty_cart3,Número alternativo. ¿Desea sobreordenar?
+1,200_select_atleast_one_invoice,Seleccione una factura para continuar
+1,200_no_top_selling_prod,No se encontró ningún producto de mayor venta
+1,200_qty_updated_successfuly,Cantidad actualizada con éxito
+1,200_user_blank,Proporcione el nombre de usuario.
+1,200_qty_update_error,No se puede actualizar la cantidad.
+1,200_pswd_blank,Introduzca la contraseña.
+1,200_user_pswd_blank,El nombre de usuario y la contraseña no pueden estar en blanco.
+1,403_invalid_token,Acceso no autorizado. La sesión no es válida.
+1,200_session_expired,La sesión ha expirado. Inicia sesión nuevamente.
+1,200_invalid_lang,El idioma no es compatible.
+1,200_invalid_cmpny,Empresa no encontrada.
+1,200_invalid_customer,Cliente no encontrado.
+1,200_invalid_filter,Proporcione criterios de filtro válidos.
+1,200_invalid_order,Orden no encontrada.
+1,200_longLat_blank,Proporcione latitud y longitud.
+1,200_cust_blank,Proporcione número de cliente.
+1,200_order_blank,Proporcione número de pedido.
+1,200_deviceid_blank,Proporcione el identificador de dispositivo del usuario.
+1,200_token_renew,La sesión ha expirado. Se ha creado una nueva sesión.
+1,200_invalid_usertype,Tipo de usuario no válido.
+1,200_mob_multilogin,"No se permiten multiples inicios de sesión. Cierra la sesión en el dispositivo anterior."
+1,403_mismatch_usertype_token,Acceso no autorizado. La sesión no es válida.
+1,403_mismatch_deviceid_token,Acceso no autorizado. La sesión no es válida.
+1,403_mismatch_user_token,Acceso no autorizado. La sesión no es válida.
+1,403_mismatch_lang_token,Acceso no autorizado. La sesión no es válida.
+1,200_lang_blank,Proporcione ID de idioma.
+1,200_cmpny_blank,Proporcione ID de empresa.
+1,200_invalid_user,Nombre de usuario no válido.
+1,200_invalid_paswd,Contraseña Invalida.
+1,200_order_placed_online,¡Gracias por su orden! El número de pedido es:
+1,200_order_number,El número de pedido es:
+1,200_enter_card_no,"Por favor, ingrese el número de tarjeta. Si no desea realizar el pago en línea, ingrese el monto 0 en el monto bajo un método de pago en línea"
+1,200_enter_month,"Por favor, ingrese el mes."
+1,200_enter_year,"Por favor, ingrese el año."
+1,200_enter_cardcode,"Por favor, introduzca el código de la tarjeta."
+1,200_order_placed_offline,Su pedido ha sido colocado con éxito. Se sincronizará una vez que se conecte.
+1,200_invalid_user_paswd,Usuario o contraseña invalido.
+1,200_usertype_blank,Proporcione el tipo de usuario.
+1,500_unknown_error,Algo salió mal. Inténtalo de nuevo.
+1,200_invalid_datetime,"Proporcione una fecha, hora y zona horaria válidas."
+1,200_invalid_sortby,Criterios de clasificación no encontrados.
+1,200_checkinTimestamp_blank,Proporcione la hora de registro.
+1,200_cat_blank,Proporcionar una categoría.
+1,200_invalid_category,Categoría no encontrada.
+1,200_invalid_timestamp,La marca de tiempo no es válida.
+1,200_no_product_found,Ningún producto fue encontrado.
+1,200_invalid_quantity,Cantidad Inválida
+1,200_product_added_successfully,Producto agregado con exito
+1,200_enter_quantity_first,"Por favor, ingrese la cantidad primero."
+1,200_error_in_adding_products,Error al agregar productos
+1,200_no_size_available,Tamaño no disponible
+1,200_no_shipping_address_available,No hay dirección de envío disponible
+1,200_enter_valid_quantity,"Por favor, ingrese la cantidad válida"
+1,200_credit_limit_exceed,Ha excedido límite de crédito
+1,200_empty_cart,Vaciar Carro
+1,200_cart_already_sync,El carrito ya se ha sincronizado
+1,200_blank_cart_operation,La operación del carrito está en blanco
+1,200_invalid_cart_operation,La operación del carrito no es válida
+1,200_memo_not_found,Nota no encontrada en el archivo de cuentas por cobrar abierto
+1,200_invoice_not_Found,La factura no se puede encontrar en el archivo abierto de cuentas por cobrar
+1,200_no_invoices,No se encontraron facturas
+1,200_verify_entry ,"Por favor, verifica la entrada cancel-layaway"
+1,200_order_not_available,"La orden no está disponible, este layaway no se puede actualizar"
+1,200_invalid_payment_method,Seleccione un método de pago válido
+1,200_on_acc_pay_ntfound,Pago de la cuenta no encontrado
+1,200_cheque_num_cannot_blank,El número de cheque no puede estar en blanco
+1,200_less_pay_amount,"Por favor, pague la cantidad total."
+1,200_invoice_amount_exceed,La cantidad de la factura excede su límite de crédito disponible
+1,200_order_num_cannot_blank,"Por favor, proporcione el número de orden."
+1,200_invalid_order_num,Orden inválida
+1,200_cashback_cntbe_greater_invoice,El reembolso no puede ser mayor que el saldo de la factura
+1,200_cashback_cntbe_greater_amtpaid,El reembolso no puede ser mayor al monto pagado
+1,200_an_error_occured,Ha ocurrido un error. ¡Inténtalo de nuevo!
+1,200_online_amount_exceed,El monto en línea excede su cantidad de pago neto
+1,200_invalid_rowid,ID de fila inválida
+1,200_no_more_records,No más productos encontrados
+1,200_no_order_history,No hay datos del historial de pedidos disponibles
+1,200_po_number_blank,"Por favor, proporcione el número de pedido del cliente."
+1,200_signee_name_blank,El nombre no puede estar en blanco
+1,200_order_date_time_blank,Indique la fecha y la hora de la colocación del pedido
+1,200_item_fr_invoice,Artículos por factura
+1,200_reporttype_blank,Seleccione un tipo de informe
+1,200_not_found,Extraviado
+1,200_insufficientCredLim,Límite de crédito insuficiente. ¿Estás seguro de que quieres continuar?
+1,200_already_checkin,"Ya te has registrado. Por favor, echa un vistazo."
+1,200_checkin,Por favor, regístrese
+1,200_invalid_ship_num,Número de envío / ubicación no válido
+1,200_blank_ship_num,El número de envío no puede estar en blanco
+1,200_blank_checkout_time,"Por favor, proporcione la hora de salida."
+1,200_blank_mode,Proporcione el modo de operación (Check-In / Out)
+1,200_invalid_mode,Modo de operación inválido
+1,200_no_live_tracking_rec,No existe información
+1,200_invalid_report_type,Tipo de informe no válido
+1,200_server_timeout,Ha excedido el tiempo de espera. ¡Inténtalo de nuevo!
+1,200_error_occur,Hubo un error. Inténtalo de nuevo.
+1,LblOpenOrders,Ordenes Abiertas
+1,LblPalletQty, Cantidad en Paletas
+1,LblDateWanted, Fecha Deseada
+1,LblOutofStock,Los siguientes productos no estan disponibles. Remuevalos del carrito para proceder.
+1,LblCartUpdatedSuccessfully,La cantidad de products ha sido modificada exitosamente.
+1,LblFreeBoxes,Cantidad Gratuíta
+1,LblCustomersData,Información de Clientes
+1,LblNoCategoriesFound,No se encontraron categorías.
+1,LblNoItemsFound,No se encontraron productos.
+1,LblNoProductInformation,No hay información disponible del producto.
+1,LblNoDateWanted, "Por favor, entre la fecha deseada."
+1,200_not_enough_qty_cart4,La cantidad disponible para este artículo es
+1,200_not_enough_qty_cart5,y la cantidad entrada es
+1,200_not_enough_qty_cart6,"por lo tanto,"
+1,200_not_enough_qty_cart7,"artículos pasarán a orden de respaldo. ¿Desea proceder?" 
+1,200_not_enough_qty_cart8,"La cantidad de productos es mayor que la cantidad disponible (sera procesado como orden de respaldo)"
+1,LblNotOnline,Esta opción no está disponible sin conexión.
+1,LblLocationSettings."Por favor, asegurese de tener los permisos de localización activados. Puede activarlos en los ajustes."
+1,LblLoading,Cargando
+1,200_max_order_qty,Cantidad de peido máxima para este artículo alcanzada. Se cantidad máxima para ordenar es:

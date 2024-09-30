@@ -4734,6 +4734,195 @@ METHOD PUBLIC VOID logout(INPUT  ipcToken      AS CHARACTER,
   END FINALLY.
                           
 END METHOD. 
+
+DEFINE PRIVATE TEMP-TABLE TTCustomerSuggestionList NO-UNDO
+    FIELD CustomerNumber      AS CHARACTER 
+    FIELD CustomerName        AS CHARACTER 
+    FIELD CustomerPhoneNumber AS CHARACTER
+    FIELD CustomerEmail       AS CHARACTER.
+    
+
+
+/*------------------------------------------------------------------------------------
+ Purpose: This method is used to fetch all the customers data to be used for 
+ a list of suggestions for the search client function in the front end
+  
+ Input Parameters: 1.ipcToken      - User-token,
+                   2.ipcLangID     - language-id,
+                   3.ipcSalesRepId - salesrep id for which customers to be fetched,
+                   
+ Output Parameters:1.opcError                 - Errors if any,
+                   2.opcMessage               - messages contains user related information,
+                   3.opcAppToken              - it contains new token if old token expired 
+                                                otherwise return old token,
+                   4.TTCustomerSuggestionList - Contains a temp table that contains all 
+                                                the data for the suggestions that will be 
+                                                present in the front end
+ Notes: 
+---------------------------------------------------------------------------------------*/
+
+METHOD PUBLIC VOID fetchCustomerSuggestionsList(INPUT ipcToken             AS CHARACTER,
+                                                INPUT ipcLangID            AS CHARACTER,
+                                                INPUT ipcSalesRepID        AS CHARACTER,
+                                                OUTPUT opcMessage          AS CHARACTER,
+                                                OUTPUT opcAppToken         AS CHARACTER,
+                                                OUTPUT opiStatusCode       AS INTEGER,
+                                                OUTPUT TABLE TTCustomerSuggestionList):
+                                                    
+      DEFINE VARIABLE cCompanyCode      AS           CHARACTER             NO-UNDO.
+      DEFINE VARIABLE objCustomer       AS CLASS     SalesmanCustomersData NO-UNDO.
+      DEFINE VARIABLE objTokenMgmt      AS CLASS     TokenManagement       NO-UNDO.
+      DEFINE VARIABLE objCommonSrc      AS CLASS     CommonSource          NO-UNDO.
+      DEFINE VARIABLE opcStatus         AS CHARACTER                       NO-UNDO.
+      
+                                                    
+      FOR FIRST Token WHERE Token.Token = ipcToken NO-LOCK:
+      IF CAN-FIND(FIRST CMPNY WHERE CMPNY.COMPANY-CODE = Token.Company-ID NO-LOCK) THEN
+        ASSIGN cCompanyCode = Token.Company-ID.            
+      END. /* FOR FIRST Token..*/  
+      
+      ASSIGN 
+        objCustomer       = NEW SalesmanCustomersData(INPUT ipcToken)
+        objTokenMgmt      = NEW TokenManagement(INPUT ipcToken)
+        objCommonSrc      = NEW CommonSource(INPUT ipcToken).
+                                                   
+      IF TRIM(ipcLangID) EQ "":U OR TRIM(ipcLangID) EQ ? THEN
+      DO:
+        /* Get multilingual message for blank language id */
+        objCommonSrc:getMessages(INPUT  ipcLangID,
+                                 INPUT  ConstantInitializer:c200LangBlank,                                                              
+                                 OUTPUT cError,
+                                 OUTPUT opiStatusCode).
+            
+        IF cError NE "":U THEN 
+          UNDO,THROW NEW AppError(cError,1).
+      END. /* IF TRIM(ipcLangID) EQ "":U OR.. */ 
+      ELSE
+      DO: 
+       IF NOT CAN-FIND(CDILANGUAGE WHERE CDILANGUAGE.language-id EQ TRIM(ipcLangID) NO-LOCK) THEN
+        DO:
+          /* Get multilingual message for language not supported */
+          objCommonSrc:getMessages(INPUT  ipcLangID,
+                                   INPUT  ConstantInitializer:c200InvalidLang,                                                              
+                                   OUTPUT cError,
+                                   OUTPUT opiStatusCode).
+                                      
+          IF cError NE "":U THEN 
+            UNDO,THROW NEW AppError(cError,1).
+        END. /* IF NOT CAN-FIND(CDILANGUAGE WHERE.. */        
+      END. /* ELSE */    
+      
+      /*Validate the token of the user on every request*/
+  IF TRIM(ipcToken) EQ "":U OR TRIM(ipcToken) EQ ? THEN
+  DO:
+    objCommonSrc:getMessages(INPUT  ipcLangID,
+                             INPUT  ConstantInitializer:c403InvalidToken,                                                              
+                             OUTPUT cError,
+                             OUTPUT opiStatusCode).
+        
+    IF cError NE "":U THEN 
+      UNDO,THROW NEW AppError(cError,1).
+  END. /* IF TRIM(ipcToken) EQ "":U OR.. */ 
+  
+  IF TRIM(ipcSalesRepId) EQ "":U OR TRIM(ipcSalesRepId) EQ ? THEN
+  DO:
+    /* Get multilingual message for blank user */
+    objCommonSrc:getMessages(INPUT  ipcLangID,
+                             INPUT  ConstantInitializer:c200UserBlank,                                                              
+                             OUTPUT cError,
+                             OUTPUT opiStatusCode).
+        
+    IF cError NE "":U THEN 
+      UNDO,THROW NEW AppError(cError,1).
+  END. /* IF TRIM(ipcSalesRepId) EQ "":U OR.. */
+  
+  ELSE
+  DO:
+    FIND CSAMS WHERE CSAMS.sales-rep-id EQ ipcSalesRepId  NO-LOCK NO-ERROR.
+    IF NOT AVAILABLE CSAMS THEN
+    DO:
+      /* Get multilingual message for invalid user */
+      objCommonSrc:getMessages(INPUT  ipcLangID,
+                               INPUT  ConstantInitializer:c200InvalidUser,                                                              
+                               OUTPUT cError,
+                               OUTPUT opiStatusCode).
+        
+      IF cError NE "":U THEN 
+        UNDO,THROW NEW AppError(cError,1).
+    END. /* IF NOT AVAILABLE CSAMS.. */ 
+  END.
+  
+  objTokenMgmt:loggedInUserTokenRenew(INPUT  ipcToken,
+                                      INPUT  ipcSalesRepId,
+                                      INPUT  ipcLangID, 
+                                      OUTPUT opcMessage,
+                                      OUTPUT opcStatus,
+                                      OUTPUT opcAppToken,
+                                      OUTPUT opiStatusCode). 
+                                                                                      
+  IF opcMessage NE "":U THEN
+    UNDO,THROW NEW AppError(opcMessage,1).
+    
+  
+  /* Checking if status is success */                                          
+  IF opcStatus EQ "Success":U THEN
+  DO:
+    // TODO -> Implement getting the suggestion list here 
+    
+    DEFINE VARIABLE willShowAllCustomers AS LOGICAL NO-UNDO.
+    FIND FIRST PARAMFL WHERE PARAMFL.PARAM-ID BEGINS "OE-SALES-OPERATOR" AND PARAMFL.PARAM-STATUS NO-LOCK NO-ERROR.
+    willShowAllCustomers = AVAIL PARAMFL.
+    
+    /* Create a list of customers assigned to Salesrep based on CCSMS and shpto*/
+    FOR EACH ccsms WHERE CCSMS.CUST-Number BEGINS cCompanyCode NO-LOCK:
+       IF ccsms.SALES-REP-ID NE ipcSalesRepId THEN
+       DO: 
+          IF  willShowAllCustomers THEN DO:
+              FIND TTCustomerSuggestionList WHERE TTCustomerSuggestionList.CustomerNumber = CCSMS.CUST-NUMBER NO-LOCK NO-ERROR.
+              IF NOT AVAILABLE TTCustomerSuggestionList THEN DO:
+              CREATE TTCustomerSuggestionList.
+              ASSIGN 
+                TTCustomerSuggestionList.CustomerNumber      = CCSMS.CUST-NUMBER
+                TTCustomerSuggestionList.CustomerName        = CCSMS.CUST-NAME
+                TTCustomerSuggestionList.CustomerPhoneNumber = CCSMS.PHONE-NUMBER
+                TTCustomerSuggestionList.CustomerEmail       = CCSMS.E-MAIL.
+              END.
+          END.
+          ELSE DO:
+            FOR EACH shpto WHERE shpto.cust-number  = ccsms.cust-number
+                         AND ((shpto.SALES-REP-ID = ipcSalesRepId AND NOT willShowAllCustomers) OR willShowAllCustomers) NO-LOCK BREAK BY shpto.cust-number:
+             IF FIRST-OF(shpto.cust-number) THEN DO:
+                 FIND TTCustomerSuggestionList WHERE TTCustomerSuggestionList.CustomerNumber = CCSMS.CUST-NUMBER NO-LOCK NO-ERROR.
+                 IF NOT  AVAILABLE TTCustomerSuggestionList THEN DO:
+                 CREATE TTCustomerSuggestionList.
+                 ASSIGN 
+                    TTCustomerSuggestionList.CustomerNumber      = shpto.cust-number
+                    TTCustomerSuggestionList.CustomerName        = CCSMS.CUST-NAME
+                    TTCustomerSuggestionList.CustomerPhoneNumber = CCSMS.PHONE-NUMBER 
+                    TTCustomerSuggestionList.CustomerEmail       = CCSMS.E-MAIL.
+                 END.
+              END.
+            END.
+          END.
+       END.
+    ELSE
+    DO:
+        FIND FIRST TTCustomerSuggestionList WHERE TTCustomerSuggestionList.CustomerNumber EQ ccsms.cust-number NO-ERROR.
+        IF NOT AVAILABLE TTCustomerSuggestionList THEN 
+        DO:
+           CREATE TTCustomerSuggestionList.
+           ASSIGN  
+                TTCustomerSuggestionList.CustomerNumber      = CCSMS.CUST-NUMBER
+                TTCustomerSuggestionList.CustomerName        = CCSMS.CUST-NAME
+                TTCustomerSuggestionList.CustomerPhoneNumber = CCSMS.PHONE-NUMBER
+                TTCustomerSuggestionList.CustomerEmail       = CCSMS.E-MAIL.
+        END.   
+        
+    END.
+  END. 
+  END.   
+      
+END METHOD.
     
     
 /*------------------------------------------------------------------------------------

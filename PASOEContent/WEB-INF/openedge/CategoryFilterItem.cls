@@ -223,7 +223,8 @@ CLASS CategoryFilterItem:
     ASSIGN 
       cTable        = "CINV1":U
       cInitialQuery = 'FOR EACH CINV1 WHERE (CINV1.HIDE-IN-WM-APPS NE "Y":U) AND (CINV1.LINE-UP NE "D":U AND CINV1.LINE-UP NE "W":U AND CINV1.LINE-UP NE "X":U ) AND CINV1.item-number':U + ' BEGINS ':U  + '"':U + ipcCompanyCode + '"':U.
-      // Query condition of lineup changed from OR to AND so it ignores all items with line-up D, X and Wss    
+      // Query condition of lineup changed from OR to AND so it ignores all items with line-up D, X and Wss
+    /*      
     FOR FIRST _file WHERE _File._File-name EQ cTable NO-LOCK:
       /* Loop over all indexes */
       FOR EACH _index OF _file NO-LOCK:
@@ -251,7 +252,77 @@ CLASS CategoryFilterItem:
       END. /* FOR EACH _index..*/
       
     END. /* FOR FIRST _file..*/
-       
+   */
+
+   
+   
+    //WHILE Counter <= 5 DO:
+        
+    CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "ALT-ITEM-NO"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "alt-item-number"
+                ttIndexTable.iWordIndex = ?.
+                
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "BAR-CODE"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "BAR-C"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "DESCRIPTION"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "DESC-IX"
+                ttIndexTable.iWordIndex = ?.
+                
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "DESCRIPTION"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "DESC-WORD"
+                ttIndexTable.iWordIndex = 1.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "ITEM-NUMBER"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "ITEM-NUMBER"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "OTHER-DESC"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "other-desc"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "OTHER-DESC"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "other-desc"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "VDR-ITEM-NO"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "VDR-ITEM-NO"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "VDR-ITEM-NO"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "VDR-ITEM-NO"
+                ttIndexTable.iWordIndex = ?.
+   CREATE ttIndexTable.
+              ASSIGN 
+                ttIndexTable.field-name = "VIN-NUMBER"
+                ttIndexTable.data-type  = "character"
+                ttIndexTable.index-name = "vin-number"
+                ttIndexTable.iWordIndex = ?.            
+    //END.
+    
+      
     /* Prepare dynamic query 
      cNonASCIIString now stores the comma seperated list of words*/
     DO iCount = 1 TO NUM-ENTRIES(cNonASCIIString):
@@ -327,6 +398,9 @@ CLASS CategoryFilterItem:
 
                 //FIND IVMULTBAR WHERE IVMULTBAR.BAR-CODE BEGINS charInputString NO-LOCK NO-ERROR. //Uncomment when using IVMULTBAR
                 FIND WKFILE WHERE PROG-NAME = "MULTBAR" AND CHAR1 BEGINS charInputString NO-LOCK NO-ERROR. //Uncomment when using WKFILE
+                
+/*                MESSAGE "CHAR1 " CHAR1*/
+/*                VIEW-AS ALERT-BOX.    */
 
                 //Uncomment when using WHITEMRD.p
 /*                DEF VAR box-item-number AS CHAR NO-UNDO.    */
@@ -384,6 +458,10 @@ CLASS CategoryFilterItem:
             hQuery:GET-NEXT().
             IF hQuery:QUERY-OFF-END THEN 
                 LEAVE.
+                
+                /*MESSAGE "hBuffer:BUFFER-FIELD(item-number:U):BUFFER-VALUE " skip
+                hBuffer:BUFFER-FIELD("item-number":U):BUFFER-VALUE
+                VIEW-AS ALERT-BOX.*/
               
             ASSIGN 
               cItemNumber = hBuffer:BUFFER-FIELD("item-number":U):BUFFER-VALUE
@@ -767,13 +845,6 @@ CLASS CategoryFilterItem:
       IF cError NE "":U THEN 
         UNDO,THROW NEW AppError(cError,1).  
     END. /* IF itemJsonArray:LENGTH EQ 0 THEN */   
-    
-    MESSAGE "freeformProductSearch-Output" skip
-           "opiTotalRecords " opiTotalRecords skip
-           "opiStatusCode " opiStatusCode skip
-           "opcError " opcError skip
-           "oplcSearchData " string(oplcSearchData)
-   VIEW-AS ALERT-BOX.
       
     /* Provide error message, if any */
     CATCH errorObj AS AppError:           

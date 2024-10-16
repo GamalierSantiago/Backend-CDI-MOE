@@ -4761,6 +4761,7 @@ DEFINE PRIVATE TEMP-TABLE TTCustomerSuggestionList NO-UNDO
  Notes: 
 ---------------------------------------------------------------------------------------*/
 
+@openapi.openedge.export(type="REST", useReturnValue="false", writeDataSetBeforeImage="false").
 METHOD PUBLIC VOID fetchCustomerSuggestionsList(INPUT ipcToken             AS CHARACTER,
                                                 INPUT ipcLangID            AS CHARACTER,
                                                 INPUT ipcSalesRepID        AS CHARACTER,

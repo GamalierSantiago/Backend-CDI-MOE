@@ -153,4 +153,11 @@
       <prgs:param name="lang_id" type="HEADER"/>
     </prgs:operation>
   </prgs:resource>
+  <prgs:resource consumes="application/json" name="_fetchCustomerSuggestionList" path="/fetchCustomerSuggestionList" produces="application/json">
+    <prgs:operation consumes="application/json" idls="Backend-CDI-MOE/.services/PASOEContent/WEB-INF/openedge/WrapperClass.pidl::com.progress.openedge.pdt.bpmbindings" name="WrapperClass..fetchCustomerSuggestionsList" produces="application/json" verb="GET">
+      <prgs:param name="token" type="HEADER"/>
+      <prgs:param name="lang_id" type="HEADER"/>
+      <prgs:param name="user" type="HEADER"/>
+    </prgs:operation>
+  </prgs:resource>
 </prgs:model>

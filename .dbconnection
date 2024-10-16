@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <connection>
-    <connectionentry identifier="CDI_FAMCOOP_45"/>
+    <connectionentry identifier="Famcoop_database_"/>
+    <connectionentry identifier="CDI_Security"/>
 </connection>

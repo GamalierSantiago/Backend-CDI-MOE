@@ -48,7 +48,37 @@ CLASS WrapperClass:
     FIELD recentOrderDate     AS CHARACTER
     FIELD onHoldCustomer      AS LOGICAL
     FIELD poRequired          AS LOGICAL
-    FIELD number_of_days      AS INTEGER.  
+    FIELD number_of_days      AS INTEGER
+    FIELD pageNumber          AS INTEGER.
+    
+  DEFINE PRIVATE TEMP-TABLE ttCustomerPaging NO-UNDO SERIALIZE-NAME "customers":U   
+    FIELD customerNumber      LIKE CCSMS.CUST-NUMBER
+    FIELD discount            LIKE CCSMS.CUST-NUMBER
+    FIELD customerName        LIKE CCSMS.CUST-NAME
+    FIELD secondName          LIKE CCSMS.SECOND-NAME
+    FIELD creditLimit         LIKE CCSMS.CREDIT-LIMIT
+    FIELD phoneNumber         LIKE CCSMS.PHONE-NUMBER
+    FIELD customerType        LIKE CCSMS.CUST-TYPE
+    FIELD customer_picture    LIKE CCSMS.CUST-NAME
+    FIELD terms_condition_pdf LIKE CCSMS.CUST-NAME
+    FIELD emailId             LIKE CCSMS.E-MAIL
+    FIELD amtOverdue          AS DECIMAL
+    FIELD availCredit         AS DECIMAL
+    FIELD route               LIKE CCSMS.route
+    FIELD totalSales          AS DECIMAL
+    FIELD custSaleInLast90Day AS DECIMAL
+    FIELD custAmtInvoiced     AS DECIMAL
+    FIELD paymentTerm         LIKE TERMS.CUS-TERMS-DS
+    FIELD priceList           LIKE CCSMS.PRICE-LIST
+    FIELD totalOpenOrderAmt   AS DECIMAL
+    FIELD totalOpenOrder      AS INTEGER
+    FIELD totalOverdues       AS INTEGER
+    FIELD totalInvoices       AS INTEGER 
+    FIELD recentOrderDate     AS CHARACTER
+    FIELD onHoldCustomer      AS LOGICAL
+    FIELD poRequired          AS LOGICAL
+    FIELD number_of_days      AS INTEGER
+    FIELD pageNumber          AS INTEGER.    
     
   DEFINE PRIVATE TEMP-TABLE ttsalesPersonAdd NO-UNDO
     FIELD addressL1 LIKE CSAMS.ADDRESS-L1
@@ -62,7 +92,24 @@ CLASS WrapperClass:
     FIELD customerNumber LIKE CCSMS.CUST-NUMBER
     FIELD customerName   AS CHARACTER. 
   
+  DEFINE PRIVATE TEMP-TABLE ttOpenOrderPaging NO-UNDO SERIALIZE-NAME "open_orders":U
+    FIELD orderNumber    LIKE COOHD.ORDER-NUMBER
+    FIELD orderDate      LIKE COOHD.ORDER-DATE
+    FIELD openAmt        LIKE COODT.ORDERED-PRC
+    FIELD customerNumber LIKE CCSMS.CUST-NUMBER
+    FIELD customerName   AS CHARACTER.
+  
   DEFINE PRIVATE TEMP-TABLE ttCustInvoice NO-UNDO SERIALIZE-NAME "customer_invoices":U
+    FIELD customerNumber              AS CHARACTER SERIALIZE-HIDDEN
+    FIELD invoiceNumber               AS CHARACTER
+    FIELD orderNumber                 AS CHARACTER
+    FIELD invoiceDate                 AS DATE 
+    FIELD invoiceAmount               AS DECIMAL
+    FIELD collected                   LIKE COPAR.CUS-PAYMENT
+    FIELD due_on                      LIKE COPAR.CUS-INV-DATE
+    FIELD item_fr_invoice_nt_foundmsg AS LOGICAL.
+  
+  DEFINE PRIVATE TEMP-TABLE ttCustInvoicePaging NO-UNDO SERIALIZE-NAME "customer_invoices":U
     FIELD customerNumber              AS CHARACTER SERIALIZE-HIDDEN
     FIELD invoiceNumber               AS CHARACTER
     FIELD orderNumber                 AS CHARACTER
@@ -73,6 +120,18 @@ CLASS WrapperClass:
     FIELD item_fr_invoice_nt_foundmsg AS LOGICAL.
    
   DEFINE PRIVATE TEMP-TABLE ttCustAmountOverdue NO-UNDO SERIALIZE-NAME "customer_overdues":U
+    FIELD customerNumber              LIKE COPAR.CUST-NUMBER SERIALIZE-HIDDEN
+    FIELD customerName                LIKE CCSMS.CUST-NAME SERIALIZE-HIDDEN
+    FIELD orderNumber                 LIKE COPAR.CUS-ORDER-NO 
+    FIELD description1                LIKE COPAR.Description1
+    FIELD orderDate                   LIKE COPAR.CUS-INV-DATE
+    FIELD custInvoiceAmt              LIKE COPAR.CUS-INV-COST
+    FIELD collected                   LIKE COPAR.CUS-PAYMENT
+    FIELD due_on                      LIKE COPAR.CUS-INV-DATE
+    FIELD item_fr_invoice_nt_foundmsg AS LOGICAL 
+    FIELD overdueAmount               LIKE COPAR.GROSS-INVAMT.
+  
+  DEFINE PRIVATE TEMP-TABLE ttCustAmountOverduePaging NO-UNDO SERIALIZE-NAME "customer_overdues":U
     FIELD customerNumber              LIKE COPAR.CUST-NUMBER SERIALIZE-HIDDEN
     FIELD customerName                LIKE CCSMS.CUST-NAME SERIALIZE-HIDDEN
     FIELD orderNumber                 LIKE COPAR.CUS-ORDER-NO 
@@ -135,6 +194,20 @@ CLASS WrapperClass:
     FIELD longitude      LIKE SHPTO.longitude
     FIELD latitude       LIKE SHPTO.latitude.
     
+  DEFINE PRIVATE TEMP-TABLE ttCustShippingAddressPaging NO-UNDO SERIALIZE-NAME "customer_shipping_addresses":U
+    FIELD customerNumber AS CHARACTER SERIALIZE-HIDDEN
+    FIELD primaryAddress AS LOGICAL
+    FIELD ship_number    LIKE SHPTO.SHIP-NUMBER
+    FIELD addressL1      LIKE SHPTO.ADDRESS-L1
+    FIELD addressL2      LIKE SHPTO.ADDRESS-L2 
+    FIELD addressL3      LIKE SHPTO.ADDRESS-L3
+    FIELD shipName       LIKE SHPTO.CUST-NAME
+    FIELD shippingCity   LIKE CCSMS.PHYSICAL-CITY
+    FIELD shippingState  LIKE CCSMS.PHYSICAL-STATE
+    FIELD shippingZip    LIKE CCSMS.PHYSICAL-ZIP
+    FIELD longitude      LIKE SHPTO.longitude
+    FIELD latitude       LIKE SHPTO.latitude.  
+    
   DEFINE PRIVATE TEMP-TABLE ttCustBillingAddress NO-UNDO SERIALIZE-NAME "customer_billing_address":U
     FIELD customerNumber AS CHARACTER SERIALIZE-HIDDEN   
     FIELD billingAdd1    LIKE ccsms.ADDRESS-L1
@@ -142,7 +215,16 @@ CLASS WrapperClass:
     FIELD billingAdd3    LIKE ccsms.ADDRESS-L3
     FIELD billingState   LIKE ccsms.POSTAL-STATE
     FIELD billingCity    LIKE CCSMS.POSTAL-city  
-    FIELD billingZip     LIKE CCSMS.POSTAL-ZIP.  
+    FIELD billingZip     LIKE CCSMS.POSTAL-ZIP.
+    
+  DEFINE PRIVATE TEMP-TABLE ttCustBillingAddressPaging NO-UNDO SERIALIZE-NAME "customer_billing_address":U
+    FIELD customerNumber AS CHARACTER SERIALIZE-HIDDEN   
+    FIELD billingAdd1    LIKE ccsms.ADDRESS-L1
+    FIELD billingAdd2    LIKE ccsms.ADDRESS-L2
+    FIELD billingAdd3    LIKE ccsms.ADDRESS-L3
+    FIELD billingState   LIKE ccsms.POSTAL-STATE
+    FIELD billingCity    LIKE CCSMS.POSTAL-city  
+    FIELD billingZip     LIKE CCSMS.POSTAL-ZIP.    
   
   DEFINE PRIVATE TEMP-TABLE ttCheckoutCustomer NO-UNDO
     FIELD temp_number      AS CHARACTER
@@ -197,6 +279,15 @@ CLASS WrapperClass:
     DATA-RELATION drCustOpenOrder    FOR ttCustomer, ttOpenOrder            RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
     DATA-RELATION drCustAmtOverdue   FOR ttCustomer, ttCustAmountOverdue    RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
     DATA-RELATION drCustInvoices     FOR ttCustomer, ttCustInvoice          RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN.
+    
+  DEFINE PRIVATE DATASET opdsSalespersonDataPaging SERIALIZE-HIDDEN FOR ttCustomerPaging,     ttOpenOrderPaging,            ttCustAmountOverduePaging, 
+    ttCustInvoicePaging,  ttCustShippingAddressPaging,  ttCustBillingAddressPaging
+                                                                  
+    DATA-RELATION drCustShippingAdd  FOR ttCustomerPaging, ttCustShippingAddressPaging  RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
+    DATA-RELATION drCustBillingAdd   FOR ttCustomerPaging, ttCustBillingAddressPaging   RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
+    DATA-RELATION drCustOpenOrder    FOR ttCustomerPaging, ttOpenOrderPaging            RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
+    DATA-RELATION drCustAmtOverdue   FOR ttCustomerPaging, ttCustAmountOverduePaging    RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN
+    DATA-RELATION drCustInvoices     FOR ttCustomerPaging, ttCustInvoicePaging          RELATION-FIELDS (customerNumber,customerNumber) NESTED FOREIGN-KEY-HIDDEN.  
   
   DEFINE TEMP-TABLE online_account_info NO-UNDO 
          FIELDS provider_name    AS CHARACTER 
@@ -4757,17 +4848,12 @@ END METHOD.
 METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
                                   INPUT  ipcLangID           AS CHARACTER, 
                                   INPUT  ipcSalesRepId       AS CHARACTER,                                  
-                                  INPUT  ipcSortBy           AS CHARACTER,  
+                                  INPUT  ipcSortBy           AS CHARACTER,
+                                  INPUT  ipcPageNumber       AS INTEGER,
                                   OUTPUT opcMessage          AS CHARACTER,
                                   OUTPUT opcAppToken         AS CHARACTER,
                                   OUTPUT opiStatusCode       AS INTEGER,
-                                  OUTPUT oplcSalespersonData AS LONGCHAR):
-                                      
-                                      MESSAGE "ipcToken " ipcToken skip
-                                              "ipcLangID " ipcLangID skip
-                                              "ipcSalesRepId " ipcSalesRepId skip
-                                              "ipcSortBy " ipcSortBy skip
-                                      VIEW-AS ALERT-BOX.       
+                                  OUTPUT oplcSalespersonData AS LONGCHAR):      
     
   DEFINE VARIABLE ipcSortList       AS CHARACTER INITIAL "*,A-Z,recentvisit,nearme":U.
   DEFINE VARIABLE opcStatus         AS CHARACTER NO-UNDO.
@@ -4797,8 +4883,6 @@ METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
       //ASSIGN cCompanyCode = "I". 
       FIND FIRST cmpny NO-LOCK NO-ERROR.
       IF AVAILABLE cmpny THEN cCompanyCode = CMPNY.COMPANY-CODE.
-      MESSAGE "Company " cCompanyCode 
-      VIEW-AS ALERT-BOX.
       END. 
   END. 
   
@@ -4806,13 +4890,12 @@ METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
   DO:
       FIND FIRST APIDATA WHERE APIDATA.SALES-REP-ID EQ ipcSalesRepId 
                            AND APIDATA.Company EQ cCompanyCode 
-                           AND APIDATA.APIName EQ "GETCUSTOMER" NO-LOCK NO-ERROR.
+                           AND APIDATA.APIName EQ "GETCUSTOMER"
+                           AND APIDATA.PageNumber = ipcPageNumber NO-LOCK NO-ERROR.
       IF AVAILABLE APIDATA THEN
       DO:
          COPY-LOB FROM APIDATA.Data1 TO oplcSalespersonData.
          opiStatusCode = 200. 
-         //COPY-LOB APIDATA.Data1 TO FILE "C:\Users\cdisixto\Desktop\APIDATA-Produccion\DelBackend.txt" APPEND.
-         //COPY-LOB oplcSalespersonData TO FILE "C:\Users\cdisixto\Desktop\APIDATA-Produccion\DelBackendVariable.txt" APPEND.
          RETURN.
       END.                         
   END.    
@@ -4981,18 +5064,64 @@ METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
       
     IF cError NE "":U THEN
       UNDO,THROW NEW AppError(cError,1).
-  /* 
-   OUTPUT TO "C:\Users\bsantiago\Desktop\FeatureAllCustomer-Impec\ttCustShippingAddressImpec.txt" APPEND.
-                                         FOR EACH ttCustShippingAddress NO-LOCK:
-                                             DISPLAY ttCustShippingAddress with 1 COL.
-                                         END.
-                                         OUTPUT CLOSE.   
-                                         
-                                         MESSAGE "Voy armar el Json."
-                                         VIEW-AS ALERT-BOX.*/
  
-         
-    salesDataJsonObj:READ(DATASET opdsSalespersonData:HANDLE).
+ 
+ 
+ DEFINE VARIABLE LastPage AS INTEGER NO-UNDO INITIAL 0.
+ 
+ DEFINE VARIABLE Counter AS INTEGER NO-UNDO INITIAL 0.
+ 
+ FOR EACH  ttCustomer NO-LOCK BREAK BY ttCustomer.pageNumber:
+     IF first-of(ttCustomer.pageNumber) THEN DO :
+     ASSIGN LastPage = ttCustomer.pageNumber.
+     END.
+     END.
+  
+
+ REPEAT WHILE LastPage >= Counter :
+
+ ASSIGN Counter = Counter + 1.
+ 
+ EMPTY TEMP-TABLE ttCustomerPaging.
+ EMPTY TEMP-TABLE ttOpenOrderPaging.
+ EMPTY TEMP-TABLE ttCustAmountOverduePaging.
+ EMPTY TEMP-TABLE ttCustInvoicePaging.
+ EMPTY TEMP-TABLE ttCustShippingAddressPaging.
+ EMPTY TEMP-TABLE ttCustBillingAddressPaging.
+ 
+ FOR EACH ttCustomer WHERE ttCustomer.pageNumber = Counter:
+     /*MESSAGE ttCustomer.CustomerNumber
+     VIEW-AS ALERT-BOX.*/  
+    CREATE ttCustomerPaging /*OF opdsSalespersonDataPaging*/.
+    BUFFER-COPY ttCustomer TO ttCustomerPaging /*OF opdsSalespersonDataPaging*/.
+ 
+    FOR EACH ttCustShippingAddress WHERE ttCustShippingAddress.CustomerNumber = ttCustomer.CustomerNumber:
+        CREATE ttCustShippingAddressPaging /*OF opdsSalespersonDataPaging*/.
+        BUFFER-COPY ttCustShippingAddress TO ttCustShippingAddressPaging /*OF opdsSalespersonDataPaging*/.
+    END.
+
+    FOR EACH ttCustBillingAddress WHERE ttCustBillingAddress.CustomerNumber = ttCustomer.CustomerNumber:
+        CREATE ttCustBillingAddressPaging /*OF opdsSalespersonDataPaging*/.
+        BUFFER-COPY ttCustBillingAddress TO ttCustBillingAddressPaging /*OF opdsSalespersonDataPaging*/.
+    END.
+
+    FOR EACH ttOpenOrder WHERE ttOpenOrder.CustomerNumber = ttCustomer.CustomerNumber:
+        CREATE ttOpenOrderPaging /*OF opdsSalespersonDataPaging*/.
+        BUFFER-COPY ttOpenOrder TO ttOpenOrderPaging /*OF opdsSalespersonDataPaging*/.
+    END.
+
+    FOR EACH ttCustAmountOverdue WHERE ttCustAmountOverdue.CustomerNumber = ttCustomer.CustomerNumber:
+        CREATE ttCustAmountOverduePaging /*OF opdsSalespersonDataPaging*/.
+        BUFFER-COPY ttCustAmountOverdue TO ttCustAmountOverduePaging /*OF opdsSalespersonDataPaging*/.
+    END.
+
+    FOR EACH ttCustInvoice WHERE ttCustInvoice.CustomerNumber = ttCustomer.CustomerNumber:
+        CREATE ttCustInvoicePaging /*OF opdsSalespersonDataPaging*/.
+        BUFFER-COPY ttCustInvoice TO ttCustInvoicePaging /*OF opdsSalespersonDataPaging*/.
+    END.
+END.
+          
+    salesDataJsonObj:READ(DATASET opdsSalespersonDataPaging:HANDLE).
         
     IF salesDataJsonObj:Has(INPUT "customers":U) THEN
     DO:    
@@ -5063,11 +5192,12 @@ METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
         UNDO,THROW NEW AppError(cError,1). 
              
     END. /* ELSE of salesDataJsonObj:Has( INPUT "customers" ) */   
-         
-  END. /* IF opcStatus EQ "Success":U THEN */
+    /*OriginalMente el END IF opcStatus EQ "Success":U THEN*/     
+  
   FIND FIRST APIDATA WHERE APIDATA.SALES-REP-ID EQ ipcSalesRepId 
                        AND APIDATA.Company EQ cCompanyCode 
-                       AND APIDATA.APIName EQ "GETCUSTOMER" NO-LOCK NO-ERROR.
+                       AND APIDATA.APIName EQ "GETCUSTOMER"
+                       AND APIDATA.PAGENUMBER EQ Counter NO-LOCK NO-ERROR.
                        
   IF NOT AVAILABLE APIDATA THEN 
      CREATE APIDATA.
@@ -5078,9 +5208,12 @@ METHOD PUBLIC VOID fetchCustomers(INPUT  ipcToken            AS CHARACTER,
       ASSIGN APIDATA.APIName = "GETCUSTOMER"
              APIDATA.Company =  cCompanyCode
              APIDATA.SALES-REP-ID = ipcSalesRepId
-             APIDATA.LastUpdated  = TODAY.
+             APIDATA.LastUpdated  = TODAY
+             APIDATA.PAGENUMBER = Counter.
      COPY-LOB FROM oplcSalespersonData TO APIDATA.Data1 NO-ERROR.     
-  END.                                                                
+  END.
+ END. // While 
+END. /* IF opcStatus EQ "Success":U THEN */ //Muevelo                                                              
   CATCH errorObj AS AppError:           
     ASSIGN 
       opcMessage = errorObj:GetMessage(1).  
